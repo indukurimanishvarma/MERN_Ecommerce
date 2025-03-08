@@ -10,18 +10,17 @@ export default function Login() {
     setFormData({...formData,[e.target.name]:e.target.value})
   }
   function handleLogin(e){
+    alert("Logged in Successfully")
     e.preventDefault()
     axios.post("http://localhost:5000/api/auth/login",formData)
       .then((res)=>{
         console.log("login response",res)
-        alert("Login Successfull")
         if(res.status===200){
           setUser({token:res.data.token,role:res.data.role})
           navigate("/")
         }
       })
       .catch((err)=>{
-        alert("Login Failed !! check Your Credentials")
         console.log("error from login",err)
       })
   }

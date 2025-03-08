@@ -16,14 +16,12 @@ export default function Register() {
         console.log(formData)
         axios.post("http://localhost:5000/api/auth/signup",formData)
             .then((res)=>{
-                alert("Registration Successfull")
                 console.log("response from register",res)
                 localStorage.setItem("token",res.data.token)
                 setUser({token:res.data.token,role:res.data.role})
                 navigate("/")
             })
             .catch((err)=>{
-                alert("Registration Failed !! Check Your Connection")
                 console.log(err)
             })
     }
