@@ -12,7 +12,7 @@ export default function Login() {
   function handleLogin(e){
     alert("Logged in Successfully")
     e.preventDefault()
-    axios.post("http://localhost:5000/api/auth/login",formData)
+    axios.post("https://mern-ecommerce-2-ycv2.onrender.com/api/auth/login",formData)
       .then((res)=>{
         console.log("login response",res)
         if(res.status===200){
