@@ -10,7 +10,7 @@ export default function Cart() {
         fetchCartProducts()
     }, [])
     async function fetchCartProducts() {
-        await axios.get("http://localhost:5000/api/cart", {
+        await axios.get("https://mern-ecommerce-2-ycv2.onrender.com/api/cart", {
             headers: { Authorization: `Bearer ${user.token}` }
         })
             .then((res) => {
