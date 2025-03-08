@@ -11,7 +11,7 @@ export default function Home() {
     fetchProducts();
   },[])
   async function fetchProducts(){
-    await axios.get("http://localhost:5000/api/product")
+    await axios.get("https://mern-ecommerce-2-ycv2.onrender.com/api/product")
       .then((res)=>{
         console.log(res)
         setProducts(res.data)
